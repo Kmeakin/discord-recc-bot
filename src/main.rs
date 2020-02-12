@@ -1,5 +1,5 @@
 use rand::seq::IteratorRandom;
-use serde::{Deserialize, Serialize};
+use serde::Serialize;
 use serde_json::{self};
 use serenity::{
     self,
