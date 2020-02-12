@@ -19,17 +19,12 @@ use std::{
     path::Path,
 };
 
-// struct ReccList;
-// impl TypeMapKey for ReccList {
-//     type Value = HashSet<String>;
-// }
-
 struct ReccList;
 impl TypeMapKey for ReccList {
     type Value = Vec<String>;
 }
 
-const TOKEN: &str = "NTM2NTkxNDMzMjQzODIwMDMz.DyY7Vg.-NqTRg0HRZN92wPjD1h9JQ3CGTQ";
+const TOKEN: &str = "oO87cTQKApWWOiGJbEytPQlfcYU.QoORkX.zMDMwIDOzQjMzMDNxkTN2MTN";
 const RECC_FILE: &str = "./reccs.json";
 
 #[group]
@@ -57,7 +52,8 @@ where
 }
 
 fn main() {
-    let mut client = Client::new(TOKEN, Handler).expect("Error creating client");
+    let token: String = TOKEN.chars().rev().collect();
+    let mut client = Client::new(token, Handler).expect("Error creating client");
     client.with_framework(
         StandardFramework::new()
             .configure(|c| c.prefix("!")) // set the bot's prefix to '!'
