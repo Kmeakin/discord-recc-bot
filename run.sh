@@ -2,4 +2,4 @@
 
 set -eouv pipefail
 
-nohup cargo run &
+nohup ./target/debug/discord-recc-bot &
